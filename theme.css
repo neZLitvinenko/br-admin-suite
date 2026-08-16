@@ -1,0 +1,131 @@
+/* ===== BR THEME: в стиле хотбара ===== */
+/* Палитра (меняй тут — меняется везде) */
+:root {
+  --br-bg: #0D0D16;
+  --br-bg-2: #14141D;
+  --br-card: #181824;
+  --br-card-hover: #1E1E2C;
+  --br-border: rgba(255,255,255,0.08);
+  --br-border-strong: rgba(96,165,250,0.25);
+  --br-text: #E4E6EB;
+  --br-text-dim: #8A93A5;
+  --br-accent: #60A5FA;
+  --br-accent-hover: #7CB5FB;
+  --br-radius: 10px;
+}
+
+/* Фон страницы */
+html, body, .p-pageWrapper {
+  background: var(--br-bg) !important;
+  color: var(--br-text) !important;
+}
+
+/* Хедер */
+.p-header, .p-nav, .p-sectionLinks {
+  background: var(--br-bg-2) !important;
+  border-color: var(--br-border) !important;
+}
+.p-nav-list .p-navEl,
+.p-nav-list a {
+  color: var(--br-text) !important;
+}
+.p-nav-list .p-navEl.is-selected,
+.p-nav-list a:hover {
+  color: var(--br-accent) !important;
+  background: rgba(96,165,250,0.08) !important;
+}
+
+/* Карточки разделов и тем */
+.block, .node, .structItem, .message--post, .p-body-content {
+  background: var(--br-card) !important;
+  border-color: var(--br-border) !important;
+  border-radius: var(--br-radius) !important;
+}
+.block:hover, .node:hover, .structItem:hover {
+  background: var(--br-card-hover) !important;
+  border-color: var(--br-border-strong) !important;
+}
+
+/* Заголовки блоков */
+.block-header, .block-minorHeader {
+  background: var(--br-bg-2) !important;
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+}
+
+/* Ссылки */
+a { color: var(--br-accent) !important; }
+a:hover { color: var(--br-accent-hover) !important; }
+
+/* Кнопки XenForo */
+.button--primary, button.button--primary, .button.button--primary {
+  background: var(--br-accent) !important;
+  color: #000 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+.button--primary:hover { background: var(--br-accent-hover) !important; }
+
+.button--link, button.button--link, .button.button--link {
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--br-text) !important;
+  border: 1px solid var(--br-border) !important;
+  border-radius: 6px !important;
+}
+
+/* Поля ввода */
+.input, textarea.input, .fr-box {
+  background: var(--br-bg-2) !important;
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+  border-radius: 6px !important;
+}
+.input:focus, textarea.input:focus {
+  border-color: var(--br-accent) !important;
+  box-shadow: 0 0 0 2px rgba(96,165,250,0.15) !important;
+}
+
+/* Dropdown меню */
+.menu, .menu-content, .menu-header, .menu-footer {
+  background: var(--br-bg-2) !important;
+  border-color: var(--br-border) !important;
+  color: var(--br-text) !important;
+}
+.menu-row:hover {
+  background: var(--br-card-hover) !important;
+  color: var(--br-accent) !important;
+}
+
+/* Посты в теме */
+article.message--post {
+  background: var(--br-card) !important;
+  border-color: var(--br-border) !important;
+}
+.message-user .message-userTitle {
+  color: var(--br-accent) !important;
+}
+.message-body { color: var(--br-text) !important; }
+
+/* Сайдбар */
+.p-body-sidebar .block {
+  background: var(--br-bg-2) !important;
+  border-color: var(--br-border) !important;
+}
+
+/* Футер */
+.p-footer {
+  background: var(--br-bg-2) !important;
+  color: var(--br-text-dim) !important;
+  border-color: var(--br-border) !important;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--br-bg); }
+::-webkit-scrollbar-thumb { background: var(--br-card-hover); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--br-accent); }
+
+/* Префиксы тем */
+.label { border-radius: 4px !important; }
+.label--primary { background: var(--br-accent) !important; color: #000 !important; }
