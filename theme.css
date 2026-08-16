@@ -190,3 +190,44 @@ h1,h2,h3,h5,h6{color:#fff!important;text-shadow:0 0 10px rgba(255,255,255,.45)!i
 .username--style39,.username--style40,.username--style41,.username--style42,.username--style43,.username--style44{text-shadow:0 0 10px #00FFFF!important;}
 .username--style52,.username--style53{text-shadow:0 0 10px #0087ff!important;}
 .username--style96{text-shadow:0 0 10px #FD4806!important;}
+/* ===== v12 ТОЧЕЧНЫЕ ПРАВКИ ===== */
+:root{--card:#1E222B;}
+
+/* 1) «Основной раздел» — во всю ширину, как разделы */
+.block--category,.block--category .block-body{padding:0!important;margin:0!important;}
+.block-header,.block-minorHeader{width:100%!important;margin:0 0 10px!important;border-radius:16px!important;}
+
+/* 2) Поиск: вернуть стили плашке + нормальная кнопка аккаунта вместо битой лупы */
+.uix_searchForm{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:12px!important;margin:6px 12px!important;padding:6px 12px!important;}
+.p-navgroup-user,.p-navgroup-guest{padding:0 8px!important;margin:0!important;background:transparent!important;}
+.p-navgroup-user .avatar img{width:32px!important;height:32px!important;border-radius:50%!important;object-fit:cover!important;opacity:1!important;}
+
+/* 3) «Поделиться» и сайдбар: светлее, во всю ширину, ниже по высоте */
+.p-body-sidebar,.p-body-sidebar .block-body{padding:0!important;}
+.p-body-sidebar .block,
+.block-row--separated,.uix_extendedFooter,.block--share,.p-shareSide{
+  background:var(--card)!important;
+  border:1px solid var(--border)!important;
+  border-radius:12px!important;
+  margin:0 0 10px!important;
+  padding:8px 12px!important;
+  width:100%!important;
+  box-shadow:none!important;
+}
+
+/* 4) Кнопки в боковом меню («ОТПРАВИТЬ») — как «Ответить» */
+.offCanvasMenu .button,.offCanvasMenu .button--primary{background:rgba(255,255,255,.05)!important;color:#fff!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:8px!important;font-weight:600!important;}
+
+/* 5) Редактор посветлее */
+.p-body .fr-box,.p-body .fr-wrapper,.p-body .js-editorToolbars{background:var(--card)!important;}
+
+/* 6) Сообщение: убрать внутренние скругления, один блок */
+.message-cell,.message-cell--user{background:transparent!important;border-radius:0!important;border:none!important;}
+
+/* 7) Ссылки белые (кроме ников), синие только при наведении */
+.p-body a:not(.username):not(.button),
+.bbWrapper a:not(.username),
+.p-breadcrumbs-list a{color:#fff!important;}
+.p-body a:visited:not(.username),
+.bbWrapper a:visited:not(.username){color:#fff!important;}
+.p-body a:hover,.bbWrapper a:hover{color:var(--accent)!important;}
