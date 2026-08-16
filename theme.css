@@ -1,5 +1,5 @@
 /* =====================================================
-   BR ADMIN THEME v9 — стекло хотбара, единые панели
+   BR ADMIN THEME v10 — плоская шапка, единые панели
    ===================================================== */
 
 :root{
@@ -17,7 +17,6 @@
   --r-lg:16px;
   --r-md:10px;
   --r-sm:6px;
-  --r-pill:40px;
   --shadow:0 8px 30px rgba(0,0,0,.3);
 }
 
@@ -27,48 +26,35 @@ html,body{background:var(--bg)!important;color:var(--text)!important;}
 .p-footer,.bbWrapper,blockquote,.nodeList,.structItemContainer,
 .block.block--collapsible,.node-body,.message-avatarWrapper{background:transparent!important;color:var(--text)!important;}
 
-/* ---------- Шапка ---------- */
-.p-header,.p-nav{background:var(--panel)!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;border-bottom:1px solid var(--border)!important;}
-
-/* ---------- ЕДИНЫЕ стеклянные панели (поиск / модер / секции / тулбар) ---------- */
-.p-staffBar,
-.p-sectionLinks,
-.uix_searchForm,
-.p-discoveryContent{
+/* ---------- Шапка: одна плоская система (модер+меню+поиск+секции) ---------- */
+.p-staffBar,.p-header,.p-nav{
   background:var(--panel)!important;
   backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;
-  border:1px solid var(--border)!important;
-  border-radius:var(--r-pill)!important;
-  box-shadow:var(--shadow)!important;
-  color:var(--text)!important;
+  border:none!important;border-bottom:1px solid var(--border)!important;
+  border-radius:0!important;margin:0!important;box-shadow:none!important;
 }
-.p-staffBar{margin-bottom:8px!important;}
-.p-sectionLinks{margin:8px 0!important;padding:6px 12px!important;}
-.uix_searchForm{margin:8px 0!important;padding:6px 12px!important;}
+.uix_searchForm,.p-sectionLinks{
+  background:var(--panel)!important;
+  border:none!important;border-bottom:1px solid var(--border)!important;
+  border-radius:0!important;margin:0!important;padding:6px 12px!important;box-shadow:none!important;
+}
 
-.p-navEl a,.p-nav-list a,.p-sectionLinks a,.p-staffBar a{
-  color:var(--dim)!important;border-radius:30px!important;font-weight:600!important;
-  font-size:13px!important;text-decoration:none!important;
-}
-.p-navEl a:hover,.p-nav-list a:hover,.p-sectionLinks a:hover,.p-staffBar a:hover{
-  color:var(--text)!important;background:var(--hover)!important;
-}
-.p-navEl.is-selected a{color:var(--text)!important;background:var(--red)!important;}
-.p-breadcrumbs{color:var(--dimmer)!important;}
-.p-breadcrumbs-list a{color:var(--dimmer)!important;}
-.p-breadcrumbs-list a:hover{color:var(--text)!important;}
+/* Навигация: без пилюль на иконках, аватар круглый */
+.p-navEl{background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important;padding:0 2px!important;}
+.p-navEl a,.p-sectionLinks a,.p-staffBar a{color:var(--dim)!important;border-radius:10px!important;padding:6px 10px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;}
+.p-navEl a:hover,.p-sectionLinks a:hover,.p-staffBar a:hover{color:var(--text)!important;background:var(--hover)!important;}
+.p-navEl.is-selected a{color:var(--text)!important;background:var(--soft)!important;box-shadow:inset 0 -2px 0 var(--red)!important;}
+.p-navEl .avatar img,.p-navEl--account .avatar img{border-radius:50%!important;}
 
-/* Поиск: инпут внутри стеклянной панели — прозрачный, БЕЗ своего фона */
+/* Хлебные крошки — белый текст */
+.p-breadcrumbs{color:var(--text)!important;}
+.p-breadcrumbs-list a{color:var(--text)!important;}
+.p-breadcrumbs-list a:hover{color:var(--accent)!important;}
+
+/* Поиск: инпут прозрачный, без двойного слоя */
 .uix_searchForm input,.uix_searchForm .input,.js-uix_syncValue,
-.uix_searchForm .inputGroup{
-  background:transparent!important;
-  border:none!important;
-  box-shadow:none!important;
-  color:var(--text)!important;
-}
-.uix_searchForm .inputGroup-text{
-  background:transparent!important;border:none!important;color:var(--dim)!important;
-}
+.uix_searchForm .inputGroup{background:transparent!important;border:none!important;box-shadow:none!important;color:var(--text)!important;}
+.uix_searchForm .inputGroup-text{background:transparent!important;border:none!important;color:var(--dim)!important;}
 
 /* ---------- Разделы ---------- */
 .node{background:var(--panel)!important;border:1px solid var(--border)!important;border-radius:var(--r-lg)!important;margin:0 0 10px!important;overflow:hidden!important;box-shadow:var(--shadow)!important;}
@@ -102,120 +88,78 @@ blockquote{background:var(--soft)!important;border:1px solid var(--border)!impor
 .bbCodeBlock{background:var(--soft)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
 .bbWrapper a{color:var(--accent)!important;}
 
-/* ---------- Планки ---------- */
+/* ---------- Планки и заголовки: плоские полные ряды (не кривые) ---------- */
+.block-header,.block-minorHeader{background:var(--panel)!important;color:var(--text)!important;border-top:1px solid var(--border)!important;border-bottom:1px solid var(--border)!important;border-left:none!important;border-right:none!important;border-radius:0!important;margin:0!important;padding:12px!important;}
 .blockStatus,.uix_threadListSeparator,.block-filterBar,.block-row--separated,
-.uix_extendedFooter{background:var(--panel)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
+.uix_extendedFooter{background:var(--panel)!important;color:var(--text)!important;border-top:1px solid var(--border)!important;border-bottom:1px solid var(--border)!important;border-left:none!important;border-right:none!important;border-radius:0!important;margin:0!important;padding:10px 12px!important;}
 .memberHeader{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
-.block-header,.block-minorHeader{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;margin-bottom:8px!important;}
 
-/* ---------- Вкладки ---------- */
-.tabs-tab{color:var(--dim)!important;}
-.tabs-tab.is-active{color:var(--text)!important;background:var(--red)!important;border-radius:30px!important;}
-.tabs-tab:hover{color:var(--text)!important;background:var(--hover)!important;border-radius:30px!important;}
+/* ---------- Вкладки: без красных пилюль ---------- */
+.tabs-tab{color:var(--dim)!important;background:transparent!important;border-radius:0!important;}
+.tabs-tab.is-active{color:var(--text)!important;background:transparent!important;box-shadow:inset 0 -2px 0 var(--accent)!important;}
+.tabs-tab:hover{color:var(--text)!important;background:var(--soft)!important;}
 
-/* ---------- Кнопки форума ---------- */
-/* Обычные кнопки — серый стиль (в т.ч. "Ответить" в теме) */
-.p-body .button{
-  background:rgba(255,255,255,.06)!important;
-  color:var(--dim)!important;
-  border:1px solid var(--border)!important;
-  border-radius:var(--r-sm)!important;
-  font-weight:600!important;
-}
-.p-body .button:hover{color:var(--text)!important;background:var(--hover)!important;}
+/* ---------- Кнопки форума (как в твоих меню) ---------- */
+.p-body .button{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:8px!important;font-weight:600!important;}
+.p-body .button:hover{background:var(--hover)!important;}
+.p-body .button--primary{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:8px!important;font-weight:600!important;}
+.p-body .button--primary:hover{background:var(--hover)!important;}
+.p-body .formSubmitRow .button--primary,
+.p-body .p-contentSubmit .button--primary{background:var(--accent)!important;color:#000!important;border:none!important;}
+.p-body .formSubmitRow .button--primary:hover,
+.p-body .p-contentSubmit .button--primary:hover{background:#7cb5fb!important;color:#000!important;}
 
-/* Primary-кнопки — СИНИЕ только у форм отправки (опубликовать/отправить ответ) */
-.p-body .button--primary{
-  background:rgba(255,255,255,.06)!important;
-  color:var(--dim)!important;
-  border:1px solid var(--border)!important;
-  border-radius:var(--r-sm)!important;
-  font-weight:600!important;
-}
-.p-body .button--primary:hover{color:var(--text)!important;background:var(--hover)!important;}
-
-.p-body .p-contentSubmit .button--primary,
-.p-body .js-quickReply .formSubmitRow .button--primary,
-.p-body .formSubmitRow .button--primary{
-  background:var(--accent)!important;
-  color:#000!important;
-  border:none!important;
-}
-.p-body .p-contentSubmit .button--primary:hover,
-.p-body .js-quickReply .formSubmitRow .button--primary:hover,
-.p-body .formSubmitRow .button--primary:hover{
-  background:#7cb5fb!important;
-  color:#000!important;
-}
-
-/* ---------- Поля (без двойного слоя) ---------- */
-.p-body .input,.p-body textarea.input,.p-body select.input{
-  background:var(--soft)!important;
-  color:var(--text)!important;
-  border:1px solid var(--border)!important;
-  border-radius:var(--r-sm)!important;
-}
+/* ---------- Поля ---------- */
+.p-body .input,.p-body textarea.input,.p-body select.input{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;}
 .p-body .input:focus,.p-body textarea.input:focus{border-color:var(--accent)!important;}
 .p-body .inputGroup{background:transparent!important;border:none!important;box-shadow:none!important;}
 .p-body .inputGroup-text{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-right:none!important;border-radius:var(--r-sm) 0 0 var(--r-sm)!important;}
 .p-body .inputGroup .input{border-radius:0 var(--r-sm) var(--r-sm) 0!important;}
 .p-body .s-titleInput{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;}
 
-/* ---------- Редактор: toolbar+body как единый стеклянный блок ---------- */
-.p-body .fr-box,
-.p-body .fr-wrapper,
-.p-body .js-editorToolbars{
-  background:var(--panel)!important;
-  backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;
-  border:1px solid var(--border)!important;
-  border-radius:var(--r-md)!important;
-  color:var(--text)!important;
-  box-shadow:var(--shadow)!important;
-  overflow:hidden!important;
-}
-.p-body .fr-toolbar,
-.p-body .js-editorToolbars .fr-toolbar{
-  background:var(--soft)!important;
-  border:none!important;
-  border-bottom:1px solid var(--border-dim)!important;
-  border-radius:0!important;
-}
+/* ---------- Редактор: единый блок одного цвета ---------- */
+.p-body .fr-box,.p-body .fr-wrapper,.p-body .js-editorToolbars{background:var(--panel)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;color:var(--text)!important;box-shadow:var(--shadow)!important;overflow:hidden!important;}
+.p-body .fr-toolbar{background:transparent!important;border:none!important;border-bottom:1px solid var(--border-dim)!important;border-radius:0!important;}
 .p-body .fr-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;}
 .p-body .fr-element{color:var(--text)!important;}
 .p-body .fr-toolbar .fr-command{color:var(--dim)!important;}
 .p-body .fr-toolbar .fr-command:hover{color:var(--text)!important;background:var(--hover)!important;}
 .p-body .fr-popup{background:var(--panel)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-md)!important;}
 
-/* ---------- Скрыть: #top, вниз, создать тему ---------- */
-a[href="#top"],
-a[href*="#top"],
-.button--scrollTop,
-.button--scrollToTop,
-[data-xf-init*="scroll-to-top"],
-.p-pageAction,
-.p-title-pageAction,
-.p-contentHeader .button--primary[href*="post-thread"],
+/* ---------- Скрыть лишнее ---------- */
+a[href="#top"],a[href*="#top"],
+.button--scrollTop,.button--scrollToTop,.button--scrollToBottom,.button--scroll,
+.uix_scrollToTop,.uix_scrollToBottom,.js-scrollToTop,.js-scrollToBottom,
+[data-xf-init*="scroll-to"],.p-pageAction,.p-title-pageAction,
 a.button--primary[href*="post-thread"]{display:none!important;}
 
-/* ---------- Уведомления ---------- */
+/* ---------- Уведомления / оверлеи ---------- */
 .notice,.notice-content,.blockMessage{background:var(--panel)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-md)!important;}
 .overlay,.overlay-content{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-lg)!important;}
 .overlay-titleBar{background:var(--soft)!important;color:var(--text)!important;border-bottom:1px solid var(--border)!important;}
 .tooltip{background:var(--panel)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-sm)!important;}
 
-/* ---------- Меню форума / боковая ---------- */
-.menu,.menu-content,.menu-header,.menu-footer,.menu-tabHeader,
-.offCanvasMenu-content,.offCanvasMenu-header{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-lg)!important;box-shadow:var(--shadow)!important;}
-.menu-row,.offCanvasMenu-link{background:transparent!important;color:var(--dim)!important;}
-.menu-row:hover,.offCanvasMenu-link:hover{background:var(--hover)!important;color:var(--text)!important;}
+/* ---------- Выпадающие меню форума ---------- */
+.menu,.menu-content,.menu-header,.menu-footer,.menu-tabHeader{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-lg)!important;box-shadow:var(--shadow)!important;}
+.menu-row{background:transparent!important;color:var(--dim)!important;border:none!important;border-radius:0!important;}
+.menu-row:hover{background:var(--soft)!important;color:var(--text)!important;}
+
+/* ---------- Боковая панель: единый фон, без красных кругов ---------- */
+.offCanvasMenu,.offCanvasMenu-content{background:var(--bg)!important;border:none!important;border-radius:0!important;box-shadow:none!important;color:var(--text)!important;}
+.offCanvasMenu-header{background:var(--panel)!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;}
+.offCanvasMenu .menu-tabHeader{background:var(--panel)!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;}
+.offCanvasMenu .menu-tab{background:transparent!important;border-radius:12px!important;}
+.offCanvasMenu .menu-tab.is-active{background:var(--soft)!important;}
+.offCanvasMenu .menu-tab.is-active i,.offCanvasMenu .menu-tab.is-active svg{color:var(--accent)!important;}
+.offCanvasMenu-link{background:transparent!important;color:var(--dim)!important;}
+.offCanvasMenu-link:hover{background:var(--soft)!important;color:var(--text)!important;}
 
 /* ---------- Пагинация ---------- */
 .pageNav-page{background:var(--soft)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;color:var(--dim)!important;}
 .pageNav-page:hover{color:var(--text)!important;background:var(--hover)!important;}
 .pageNav-page--current{background:var(--red)!important;color:#fff!important;border:none!important;font-weight:600!important;}
 
-/* ---------- Префиксы тем — НЕ ТРОГАЕМ (оставляем родные цветные) ---------- */
-/* (убрал все свои стили .label, чтобы форумные "на рассмотрении/одобрено" были как есть) */
+/* ---------- Префиксы тем — НЕ ТРОГАЕМ ---------- */
 
 /* ---------- Футер ---------- */
 .p-footer{background:var(--panel)!important;border-top:1px solid var(--border)!important;color:var(--dimmer)!important;}
