@@ -1,7 +1,5 @@
 /* =====================================================
-   BR ADMIN THEME v8 — 1-в-1 дизайн-токены хотбара
-   стекло rgba(20,20,30,.85)+blur | границы white .1
-   актив = #ff3333 | primary = #60a5fa
+   BR ADMIN THEME v9 — стекло хотбара, единые панели
    ===================================================== */
 
 :root{
@@ -19,6 +17,7 @@
   --r-lg:16px;
   --r-md:10px;
   --r-sm:6px;
+  --r-pill:40px;
   --shadow:0 8px 30px rgba(0,0,0,.3);
 }
 
@@ -28,20 +27,50 @@ html,body{background:var(--bg)!important;color:var(--text)!important;}
 .p-footer,.bbWrapper,blockquote,.nodeList,.structItemContainer,
 .block.block--collapsible,.node-body,.message-avatarWrapper{background:transparent!important;color:var(--text)!important;}
 
-/* ---------- Шапка: стекло как хотбар ---------- */
-.p-header,.p-nav{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border-bottom:1px solid var(--border)!important;}
-.p-staffBar{background:var(--panel)!important;border-bottom:1px solid var(--border)!important;color:var(--text)!important;}
+/* ---------- Шапка ---------- */
+.p-header,.p-nav{background:var(--panel)!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;border-bottom:1px solid var(--border)!important;}
 
-/* Навигация — как пункты хотбара */
-.p-sectionLinks{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border:1px solid var(--border)!important;border-radius:40px!important;box-shadow:var(--shadow)!important;}
-.p-navEl a,.p-nav-list a,.p-sectionLinks a{color:var(--dim)!important;border-radius:30px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;}
-.p-navEl a:hover,.p-nav-list a:hover,.p-sectionLinks a:hover{color:var(--text)!important;background:var(--hover)!important;}
+/* ---------- ЕДИНЫЕ стеклянные панели (поиск / модер / секции / тулбар) ---------- */
+.p-staffBar,
+.p-sectionLinks,
+.uix_searchForm,
+.p-discoveryContent{
+  background:var(--panel)!important;
+  backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--r-pill)!important;
+  box-shadow:var(--shadow)!important;
+  color:var(--text)!important;
+}
+.p-staffBar{margin-bottom:8px!important;}
+.p-sectionLinks{margin:8px 0!important;padding:6px 12px!important;}
+.uix_searchForm{margin:8px 0!important;padding:6px 12px!important;}
+
+.p-navEl a,.p-nav-list a,.p-sectionLinks a,.p-staffBar a{
+  color:var(--dim)!important;border-radius:30px!important;font-weight:600!important;
+  font-size:13px!important;text-decoration:none!important;
+}
+.p-navEl a:hover,.p-nav-list a:hover,.p-sectionLinks a:hover,.p-staffBar a:hover{
+  color:var(--text)!important;background:var(--hover)!important;
+}
 .p-navEl.is-selected a{color:var(--text)!important;background:var(--red)!important;}
 .p-breadcrumbs{color:var(--dimmer)!important;}
 .p-breadcrumbs-list a{color:var(--dimmer)!important;}
 .p-breadcrumbs-list a:hover{color:var(--text)!important;}
 
-/* ---------- Разделы: стеклянные карточки ---------- */
+/* Поиск: инпут внутри стеклянной панели — прозрачный, БЕЗ своего фона */
+.uix_searchForm input,.uix_searchForm .input,.js-uix_syncValue,
+.uix_searchForm .inputGroup{
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  color:var(--text)!important;
+}
+.uix_searchForm .inputGroup-text{
+  background:transparent!important;border:none!important;color:var(--dim)!important;
+}
+
+/* ---------- Разделы ---------- */
 .node{background:var(--panel)!important;border:1px solid var(--border)!important;border-radius:var(--r-lg)!important;margin:0 0 10px!important;overflow:hidden!important;box-shadow:var(--shadow)!important;}
 .node:hover{border-color:var(--hover)!important;}
 .node-title a,.node-name{color:var(--text)!important;}
@@ -68,15 +97,15 @@ html,body{background:var(--bg)!important;color:var(--text)!important;}
 .message-avatar img,.avatar img{border-radius:var(--r-md)!important;border:1px solid var(--border-dim)!important;}
 .message-name a{color:var(--text)!important;}
 
-/* Цитаты и код */
+/* Цитаты */
 blockquote{background:var(--soft)!important;border:1px solid var(--border)!important;border-left:3px solid var(--accent)!important;border-radius:var(--r-md)!important;}
 .bbCodeBlock{background:var(--soft)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
 .bbWrapper a{color:var(--accent)!important;}
 
-/* ---------- Планки и заголовки блоков ---------- */
+/* ---------- Планки ---------- */
 .blockStatus,.uix_threadListSeparator,.block-filterBar,.block-row--separated,
 .uix_extendedFooter{background:var(--panel)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
-.memberHeader,.inputGroup-text,.s-titleInput{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
+.memberHeader{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;}
 .block-header,.block-minorHeader{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;margin-bottom:8px!important;}
 
 /* ---------- Вкладки ---------- */
@@ -84,17 +113,91 @@ blockquote{background:var(--soft)!important;border:1px solid var(--border)!impor
 .tabs-tab.is-active{color:var(--text)!important;background:var(--red)!important;border-radius:30px!important;}
 .tabs-tab:hover{color:var(--text)!important;background:var(--hover)!important;border-radius:30px!important;}
 
-/* ---------- Кнопки форума (только .p-body) ---------- */
-.p-body .button{background:rgba(255,255,255,.06)!important;color:var(--dim)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;font-weight:600!important;}
+/* ---------- Кнопки форума ---------- */
+/* Обычные кнопки — серый стиль (в т.ч. "Ответить" в теме) */
+.p-body .button{
+  background:rgba(255,255,255,.06)!important;
+  color:var(--dim)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--r-sm)!important;
+  font-weight:600!important;
+}
 .p-body .button:hover{color:var(--text)!important;background:var(--hover)!important;}
-.p-body .button--primary{background:var(--accent)!important;color:#000!important;border:none!important;font-weight:600!important;}
 
-/* ---------- Поля (только .p-body) ---------- */
-.p-body .input,.p-body textarea.input,.p-body select.input{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;}
+/* Primary-кнопки — СИНИЕ только у форм отправки (опубликовать/отправить ответ) */
+.p-body .button--primary{
+  background:rgba(255,255,255,.06)!important;
+  color:var(--dim)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--r-sm)!important;
+  font-weight:600!important;
+}
+.p-body .button--primary:hover{color:var(--text)!important;background:var(--hover)!important;}
+
+.p-body .p-contentSubmit .button--primary,
+.p-body .js-quickReply .formSubmitRow .button--primary,
+.p-body .formSubmitRow .button--primary{
+  background:var(--accent)!important;
+  color:#000!important;
+  border:none!important;
+}
+.p-body .p-contentSubmit .button--primary:hover,
+.p-body .js-quickReply .formSubmitRow .button--primary:hover,
+.p-body .formSubmitRow .button--primary:hover{
+  background:#7cb5fb!important;
+  color:#000!important;
+}
+
+/* ---------- Поля (без двойного слоя) ---------- */
+.p-body .input,.p-body textarea.input,.p-body select.input{
+  background:var(--soft)!important;
+  color:var(--text)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--r-sm)!important;
+}
 .p-body .input:focus,.p-body textarea.input:focus{border-color:var(--accent)!important;}
-.p-body .js-editorToolbars,.p-body .fr-box,.p-body .fr-wrapper{background:var(--soft)!important;border:1px solid var(--border)!important;border-radius:var(--r-md)!important;color:var(--text)!important;}
+.p-body .inputGroup{background:transparent!important;border:none!important;box-shadow:none!important;}
+.p-body .inputGroup-text{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-right:none!important;border-radius:var(--r-sm) 0 0 var(--r-sm)!important;}
+.p-body .inputGroup .input{border-radius:0 var(--r-sm) var(--r-sm) 0!important;}
+.p-body .s-titleInput{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;}
 
-/* ---------- Уведомления / оверлеи ---------- */
+/* ---------- Редактор: toolbar+body как единый стеклянный блок ---------- */
+.p-body .fr-box,
+.p-body .fr-wrapper,
+.p-body .js-editorToolbars{
+  background:var(--panel)!important;
+  backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--r-md)!important;
+  color:var(--text)!important;
+  box-shadow:var(--shadow)!important;
+  overflow:hidden!important;
+}
+.p-body .fr-toolbar,
+.p-body .js-editorToolbars .fr-toolbar{
+  background:var(--soft)!important;
+  border:none!important;
+  border-bottom:1px solid var(--border-dim)!important;
+  border-radius:0!important;
+}
+.p-body .fr-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;}
+.p-body .fr-element{color:var(--text)!important;}
+.p-body .fr-toolbar .fr-command{color:var(--dim)!important;}
+.p-body .fr-toolbar .fr-command:hover{color:var(--text)!important;background:var(--hover)!important;}
+.p-body .fr-popup{background:var(--panel)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-md)!important;}
+
+/* ---------- Скрыть: #top, вниз, создать тему ---------- */
+a[href="#top"],
+a[href*="#top"],
+.button--scrollTop,
+.button--scrollToTop,
+[data-xf-init*="scroll-to-top"],
+.p-pageAction,
+.p-title-pageAction,
+.p-contentHeader .button--primary[href*="post-thread"],
+a.button--primary[href*="post-thread"]{display:none!important;}
+
+/* ---------- Уведомления ---------- */
 .notice,.notice-content,.blockMessage{background:var(--panel)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-md)!important;}
 .overlay,.overlay-content{background:var(--panel)!important;backdrop-filter:blur(15px)!important;border:1px solid var(--border)!important;color:var(--text)!important;border-radius:var(--r-lg)!important;}
 .overlay-titleBar{background:var(--soft)!important;color:var(--text)!important;border-bottom:1px solid var(--border)!important;}
@@ -111,20 +214,14 @@ blockquote{background:var(--soft)!important;border:1px solid var(--border)!impor
 .pageNav-page:hover{color:var(--text)!important;background:var(--hover)!important;}
 .pageNav-page--current{background:var(--red)!important;color:#fff!important;border:none!important;font-weight:600!important;}
 
-/* ---------- Поиск ---------- */
-.uix_searchForm,.js-uix_syncValue{background:var(--soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--r-sm)!important;}
-
-/* ---------- Префиксы ---------- */
-.label{border-radius:var(--r-sm)!important;background:var(--soft)!important;border:1px solid var(--border)!important;color:var(--text)!important;}
-.label--primary{background:var(--accent)!important;color:#000!important;border:none!important;}
+/* ---------- Префиксы тем — НЕ ТРОГАЕМ (оставляем родные цветные) ---------- */
+/* (убрал все свои стили .label, чтобы форумные "на рассмотрении/одобрено" были как есть) */
 
 /* ---------- Футер ---------- */
 .p-footer{background:var(--panel)!important;border-top:1px solid var(--border)!important;color:var(--dimmer)!important;}
 
-/* ---------- Свечение заголовков ---------- */
+/* ---------- Свечение ---------- */
 h1,h2,h3,h5,h6{color:#fff!important;text-shadow:0 0 10px rgba(255,255,255,.45)!important;}
-
-/* ---------- Свечение ников ---------- */
 .username--style3,.username--style6{text-shadow:0 0 10px #ffca00!important;}
 .username--style8,.username--style29{text-shadow:0 0 10px #CC0000!important;}
 .username--style11,.username--style12{text-shadow:0 0 10px #4169e2!important;}
