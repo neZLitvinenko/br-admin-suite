@@ -1,171 +1,453 @@
 /* =====================================================
-   BR ADMIN THEME — дашборд-стиль, финальная полировка
+   BR ADMIN THEME — дашборд-стиль, часть 1
    ===================================================== */
 
-:root{
-  --bg:#0d0f14;
-  --panel:#14141d;
-  --card:#1E2126;
-  --card2:#23262C;
-  --border:rgba(255,255,255,.1);
-  --border-dim:rgba(255,255,255,.06);
-  --accent:#60a5fa;
-  --red:#ff3333;
-  --r:14px;
-  --rs:8px;
-  --shadow:0 2px 10px rgba(0,0,0,.28);
+:root {
+  --bg: #0d0f14;
+  --panel: #14141d;
+  --card: #1E2126;
+  --card2: #23262C;
+  --border: rgba(255, 255, 255, .1);
+  --border-dim: rgba(255, 255, 255, .06);
+  --accent: #60a5fa;
+  --red: #ff3333;
+  --r: 14px;
+  --rs: 8px;
+  --shadow: 0 2px 10px rgba(0, 0, 0, .28);
 }
 
-*,*::before,*::after{box-sizing:border-box!important;}
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
 
 /* ---------- мобильная полировка ---------- */
-html{-webkit-tap-highlight-color:transparent!important;}
-::selection{background:rgba(96,165,250,.35)!important;}
+html {
+  -webkit-tap-highlight-color: transparent !important;
+}
+::selection {
+  background: rgba(96, 165, 250, .35) !important;
+}
 
 /* ---------- скрыть мусор ---------- */
-a[href="#top"],a[href="#footer"],a[href="javascript:"],
-.uix_fabBar,.uix_scrollButtons,.js-scrollButtons,.button--scroll,
-.p-title-pageAction,.button--cta,
-.js-uix_minimalSearch__target,.uix_searchIconTrigger{display:none!important;}
+a[href="#top"],
+a[href="#footer"],
+a[href="javascript:"],
+.uix_fabBar,
+.uix_scrollButtons,
+.js-scrollButtons,
+.button--scroll,
+.p-title-pageAction,
+.button--cta,
+.js-uix_minimalSearch__target,
+.uix_searchIconTrigger {
+  display: none !important;
+}
 
 /* ---------- база ---------- */
-html,body{background:var(--bg)!important;}
-.p-pageWrapper,.p-body-inner,.p-header,.p-nav,.block--category,.block,.block-container,
-.block-row,.p-footer,.bbWrapper,blockquote,.nodeList,.structItemContainer,
-.block.block--collapsible,.node-body,.message-avatarWrapper{background:transparent!important;}
+html, body {
+  background: var(--bg) !important;
+}
+.p-pageWrapper,
+.p-body-inner,
+.p-header,
+.p-nav,
+.block--category,
+.block,
+.block-container,
+.block-row,
+.p-footer,
+.bbWrapper,
+blockquote,
+.nodeList,
+.structItemContainer,
+.block.block--collapsible,
+.node-body,
+.message-avatarWrapper {
+  background: transparent !important;
+}
 
 /* ---------- шапка / модер / навигация ---------- */
-.p-staffBar{background:var(--panel)!important;border:none!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;margin:0!important;box-shadow:none!important;}
-.p-header,.p-nav,.p-navSticky{background:var(--panel)!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;border:none!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;margin:0!important;box-shadow:none!important;overflow:hidden!important;}
-.p-sectionLinks{background:var(--panel)!important;border:none!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;margin:0!important;overflow:hidden!important;}
-.p-navEl{background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;padding:0 2px!important;}
-.p-navEl-link,.p-navEl-splitTrigger{border-radius:var(--rs)!important;}
-.p-navEl-link:hover,.p-navEl-splitTrigger:hover{background:var(--card2)!important;}
-.p-navEl.is-selected .p-navEl-link{background:var(--card2)!important;box-shadow:inset 0 -2px 0 var(--red)!important;}
-.p-navgroup-link--iconic{background:transparent!important;border:none!important;}
-.p-navgroup-user .avatar img{width:32px!important;height:32px!important;border-radius:50%!important;object-fit:cover!important;}
+.p-staffBar {
+  background: var(--panel) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+.p-header,
+.p-nav,
+.p-navSticky {
+  background: var(--panel) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+.p-sectionLinks {
+  background: var(--panel) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+.p-navEl {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 2px !important;
+}
+.p-navEl-link,
+.p-navEl-splitTrigger {
+  border-radius: var(--rs) !important;
+}
+.p-navEl-link:hover,
+.p-navEl-splitTrigger:hover {
+  background: var(--card2) !important;
+}
+.p-navEl.is-selected .p-navEl-link {
+  background: var(--card2) !important;
+  box-shadow: inset 0 -2px 0 var(--red) !important;
+}
+.p-navgroup-link--iconic {
+  background: transparent !important;
+  border: none !important;
+}
+.p-navgroup-user .avatar img {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
 
 /* поиск — пилюля */
-.uix_searchBar,.uix_searchBarInner{background:transparent!important;border:none!important;box-shadow:none!important;}
-.uix_searchForm{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:30px!important;padding:6px 14px!important;transition:border-color .15s!important;}
-.uix_searchForm:focus-within{border-color:var(--accent)!important;}
-.uix_searchForm input,.uix_searchInput,.js-uix_syncValue{background:transparent!important;border:none!important;box-shadow:none!important;}
-.uix_searchIcon,.uix_search--settings,.uix_search--close{background:transparent!important;border:none!important;}
+.uix_searchBar,
+.uix_searchBarInner {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.uix_searchForm {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 30px !important;
+  padding: 6px 14px !important;
+  transition: border-color .15s !important;
+}
+.uix_searchForm:focus-within {
+  border-color: var(--accent) !important;
+}
+.uix_searchForm input,
+.uix_searchInput,
+.js-uix_syncValue {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.uix_searchIcon,
+.uix_search--settings,
+.uix_search--close {
+  background: transparent !important;
+  border: none !important;
+}
 
 /* ---------- категории ---------- */
-.block--category,.block--category .block-body{padding:0!important;margin:0!important;width:100%!important;}
-.block--category .block-header{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;margin:0 0 10px!important;padding:12px 14px!important;width:100%!important;box-shadow:var(--shadow)!important;}
-.categoryCollapse--trigger{background:transparent!important;border:none!important;}
+.block--category,
+.block--category .block-body {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+.block--category .block-header {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  margin: 0 0 10px !important;
+  padding: 12px 14px !important;
+  width: 100% !important;
+  box-shadow: var(--shadow) !important;
+}
+.categoryCollapse--trigger {
+  background: transparent !important;
+  border: none !important;
+}
 
 /* ---------- разделы ---------- */
-.node{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;margin:0 0 10px!important;overflow:hidden!important;box-shadow:var(--shadow)!important;width:100%!important;transition:border-color .15s!important;}
-.node:hover{border-color:rgba(96,165,250,.35)!important;}
-.node-body{background:transparent!important;border-radius:0!important;}
-.node-main>*{border-bottom:none!important;}
-.node-extra-icon .avatar img{border-radius:8px!important;}
+.node {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  margin: 0 0 10px !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow) !important;
+  width: 100% !important;
+  transition: border-color .15s !important;
+}
+.node:hover {
+  border-color: rgba(96, 165, 250, .35) !important;
+}
+.node-body {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+.node-main > * {
+  border-bottom: none !important;
+}
+.node-extra-icon .avatar img {
+  border-radius: 8px !important;
+}
 
 /* ---------- список тем ---------- */
-.structItemContainer{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;overflow:hidden!important;box-shadow:var(--shadow)!important;width:100%!important;}
-.structItem{background:transparent!important;border:none!important;border-bottom:1px solid var(--border-dim)!important;margin:0!important;border-radius:0!important;transition:background .15s!important;}
-.structItem:last-child{border-bottom:none!important;}
-.structItem:hover{background:var(--card2)!important;}
-.structItem.is-unread{box-shadow:inset 3px 0 0 var(--accent)!important;}
-.structItem-cell{border-bottom:none!important;}
-.s-titleInput{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;padding:10px!important;}
-
-/* ---------- сообщения ---------- */
-.block--messages .message,.js-quickReply .message,
-.block--messages .block-row,.js-quickReply .block-row{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;margin-bottom:10px!important;overflow:hidden!important;box-shadow:var(--shadow)!important;width:100%!important;}
-.message-cell{background:transparent!important;border-radius:0!important;border:none!important;padding:10px!important;}
-.message-cell--user{border-bottom:1px solid var(--border-dim)!important;}
-.message-avatar img,.avatar img{border-radius:10px!important;}
-.message-responseRow{background:var(--card2)!important;border:1px solid var(--border-dim)!important;border-radius:var(--rs)!important;}
-blockquote{background:var(--card2)!important;border:1px solid var(--border)!important;border-left:3px solid var(--accent)!important;border-radius:var(--rs)!important;}
-.bbCodeBlock{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;}
+.structItemContainer {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow) !important;
+  width: 100% !important;
+}
+.structItem {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-dim) !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  transition: background .15s !important;
+}
+.structItem:last-child {
+  border-bottom: none !important;
+}
+.structItem:hover {
+  background: var(--card2) !important;
+}
+.structItem.is-unread {
+  box-shadow: inset 3px 0 0 var(--accent) !important;
+}
+.structItem-cell {
+  border-bottom: none !important;
+}
+.s-titleInput {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  padding: 10px !important;
+}
+/* ========== сообщения ========== */
+.block--messages .message,
+.js-quickReply .message,
+.block--messages .block-row,
+.js-quickReply .block-row {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  margin-bottom: 10px !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow) !important;
+  width: 100% !important;
+}
+.message-cell {
+  background: transparent !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 10px !important;
+}
+.message-cell--user {
+  border-bottom: 1px solid var(--border-dim) !important;
+}
+.message-avatar img,
+.avatar img {
+  border-radius: 10px !important;
+}
+.message-responseRow {
+  background: var(--card2) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: var(--rs) !important;
+}
+blockquote {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: var(--rs) !important;
+}
+.bbCodeBlock {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+}
 
 /* ленты */
-.contentRow{border-bottom:1px solid var(--border-dim)!important;}
-.contentRow:last-child{border-bottom:none!important;}
-.contentRow-figure .avatar img{border-radius:8px!important;}
+.contentRow {
+  border-bottom: 1px solid var(--border-dim) !important;
+}
+.contentRow:last-child {
+  border-bottom: none !important;
+}
+.contentRow-figure .avatar img {
+  border-radius: 8px !important;
+}
 
 /* ---------- редактор: единая карточка, без коробок ---------- */
-.fr-box,.fr-wrapper,.js-editorToolbars{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;box-shadow:var(--shadow)!important;overflow:hidden!important;}
-.fr-toolbar{background:var(--card2)!important;border:none!important;border-bottom:1px solid var(--border-dim)!important;border-radius:0!important;}
-.fr-wrapper{background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important;}
-.fr-command,.fr-toolbar button{background:transparent!important;border:none!important;box-shadow:none!important;border-radius:6px!important;transition:background .15s!important;}
-.fr-command:hover{background:var(--card2)!important;}
-.fr-popup{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;}
+.fr-box,
+.fr-wrapper,
+.js-editorToolbars {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  box-shadow: var(--shadow) !important;
+  overflow: hidden !important;
+}
+.fr-toolbar {
+  background: var(--card2) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-dim) !important;
+  border-radius: 0 !important;
+}
+.fr-wrapper {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.fr-command,
+.fr-toolbar button {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  transition: background .15s !important;
+}
+.fr-command:hover {
+  background: var(--card2) !important;
+}
+.fr-popup {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+}
 
-/* ---------- кнопки форума (как в твоих меню) ---------- */
-.button{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;font-weight:600!important;transition:background .15s,border-color .15s!important;}
-.button:hover{background:var(--card)!important;border-color:rgba(96,165,250,.35)!important;}
-.button--primary{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;}
-.formSubmitRow .button--primary,.p-contentSubmit .button--primary,
-.profilePost-form .button--primary{background:var(--accent)!important;border:none!important;color:#000!important;}
-.formSubmitRow .button--primary:hover,.p-contentSubmit .button--primary:hover{background:#7cb5fb!important;}
+/* ---------- кнопки форума (единый стиль) ---------- */
+.button {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  font-weight: 600 !important;
+  transition: background .15s, border-color .15s !important;
+}
+.button:hover {
+  background: var(--card) !important;
+  border-color: rgba(96, 165, 250, .35) !important;
+}
+.button--primary {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+}
+/* Кнопка «Ответить» и аналогичные — единый стиль без лишних эффектов */
+.formSubmitRow .button--primary,
+.p-contentSubmit .button--primary,
+.profilePost-form .button--primary,
+.button.button--reply,
+.button[data-action="reply"] {
+  background: var(--accent) !important;
+  border: none !important;
+  color: #000 !important;
+  border-radius: var(--rs) !important;
+}
+.formSubmitRow .button--primary:hover,
+.p-contentSubmit .button--primary:hover,
+.profilePost-form .button--primary:hover,
+.button.button--reply:hover,
+.button[data-action="reply"]:hover {
+  background: #7cb5fb !important;
+}
 
-/* ---------- поля ---------- */
-.input,textarea.input,select.input{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;transition:border-color .15s!important;}
-.input:focus,textarea.input:focus{border-color:var(--accent)!important;}
-.inputGroup{background:transparent!important;border:none!important;box-shadow:none!important;}
-.inputGroup-text{background:var(--card2)!important;border:1px solid var(--border)!important;border-right:none!important;border-radius:var(--rs) 0 0 var(--rs)!important;padding:10px!important;}
-.inputGroup .input{border-radius:0 var(--rs) var(--rs) 0!important;}
+/* Поля ввода */
+.input,
+textarea.input,
+select.input {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  transition: border-color .15s !important;
+}
+.input:focus,
+textarea.input:focus {
+  border-color: var(--accent) !important;
+}
+.inputGroup {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.inputGroup-text {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-right: none !important;
+  border-radius: var(--rs) 0 0 var(--rs) !important;
+  padding: 10px !important;
+}
+.inputGroup .input {
+  border-radius: 0 var(--rs) var(--rs) 0 !important;
+}
 
-/* ---------- планки ---------- */
-.blockStatus,.uix_threadListSeparator,.block-filterBar{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;padding:10px!important;}
-.block-row--separated{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;padding:10px 14px!important;margin:0 0 12px!important;width:100%!important;}
-.uix_extendedFooter{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;padding:5px!important;margin-top:5px!important;}
-.fa-rss{background:var(--card2)!important;border-radius:var(--rs)!important;padding:5px!important;}
+/* ---------- планки (без лишних скруглений) ---------- */
+.blockStatus,
+.uix_threadListSeparator,
+.block-filterBar {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  padding: 10px !important;
+}
+.block-row--separated {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  padding: 10px 14px !important;
+  margin: 0 0 12px !important;
+  width: 100% !important;
+}
+.uix_extendedFooter {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  padding: 5px !important;
+  margin-top: 5px !important;
+}
+.fa-rss {
+  background: var(--card2) !important;
+  border-radius: var(--rs) !important;
+  padding: 5px !important;
+}
 
 /* ---------- виджеты сайдбара ---------- */
-.p-body-sidebar,.p-body-sidebar .block-body{padding:0!important;margin:0!important;}
-.block--widget,.p-body-sidebar .block{background:transparent!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;margin:0 0 12px!important;padding:8px!important;width:100%!important;box-shadow:none!important;overflow:hidden!important;}
-.block-minorHeader,.p-body-sidebar .block-header{background:var(--card2)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;margin:0 0 8px!important;padding:12px 14px!important;width:100%!important;box-shadow:none!important;}
-.p-body-sidebar .block-body{background:transparent!important;border:none!important;padding:4px 8px 8px!important;}
-.p-body-sidebar .block-body .block-row,
-.p-body-sidebar .block-body a{background:transparent!important;border:none!important;border-bottom:1px solid var(--border-dim)!important;border-radius:0!important;box-shadow:none!important;padding:10px 4px!important;}
-.p-body-sidebar .block-body .block-row:last-child,
-.p-body-sidebar .block-body a:last-child{border-bottom:none!important;}
-
-/* поделиться */
-.shareButtons,.block--share,.p-shareSide{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;padding:10px 14px!important;margin:0 0 12px!important;width:100%!important;box-shadow:none!important;}
-
-/* ---------- профиль ---------- */
-.memberHeader{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;padding:5px!important;margin-bottom:10px!important;box-shadow:var(--shadow)!important;width:100%!important;}
-.memberHeader-description{background:var(--card2)!important;border-radius:var(--rs)!important;}
-.memberExtras{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;width:100%!important;}
-.tabs-tab,.memberTab-link{background:transparent!important;border:none!important;border-radius:0!important;text-shadow:none!important;}
-.tabs-tab:hover,.memberTab-link:hover{background:var(--card2)!important;}
-.tabs-tab.is-active,.memberTab-link.is-active{background:transparent!important;border-bottom:2px solid var(--accent)!important;text-shadow:none!important;}
-.profilePost{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;margin-bottom:10px!important;width:100%!important;}
-.profilePost-form{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;padding:12px!important;width:100%!important;}
-
-/* ---------- меню / боковая ---------- */
-.menu,.menu-content,.menu-header,.menu-footer,.menu-tabHeader{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--r)!important;box-shadow:var(--shadow)!important;}
-.menu-row,.menu-linkRow{background:transparent!important;border:none!important;border-radius:0!important;}
-.menu-row:hover,.menu-linkRow:hover{background:var(--card2)!important;}
-.offCanvasMenu,.offCanvasMenu-content{background:var(--card)!important;border:none!important;border-radius:0!important;box-shadow:none!important;}
-.offCanvasMenu-header{background:var(--card2)!important;border-bottom:1px solid var(--border)!important;border-radius:0!important;}
-.offCanvasMenu .menu-tab,.offCanvasMenu-tab,.sidePanel__tab{background:transparent!important;border-radius:var(--rs)!important;}
-.offCanvasMenu .menu-tab.is-active,.offCanvasMenu-tab.is-active,.sidePanel__tab--active{background:var(--card2)!important;box-shadow:inset 0 -2px 0 var(--accent)!important;}
-.offCanvasMenu-link{background:transparent!important;}
-.offCanvasMenu-link:hover{background:var(--card2)!important;}
-
-/* ---------- уведомления / футер ---------- */
-.notice,.notice-content,.blockMessage{background:var(--card)!important;border:1px solid var(--border)!important;border-radius:var(--rs)!important;}
-.p-footer{background:var(--panel)!important;border-top:1px solid var(--border)!important;}
-
-/* ---------- свечение — ТОЛЬКО ники ---------- */
-h1,h2,h3,h5,h6,.block-minorHeader,.block-header,.node-title a,
-.uix_categoryTitle,.tabs-tab,.memberTab-link,.p-title-value{text-shadow:none!important;}
-.username--style3,.username--style6{text-shadow:0 0 10px #ffca00!important;}
-.username--style8,.username--style29{text-shadow:0 0 10px #CC0000!important;}
-.username--style11,.username--style12{text-shadow:0 0 10px #4169e2!important;}
-.username--style13,.username--style17,.username--style24{text-shadow:0 0 10px #1ac61b!important;}
-.username--style15{text-shadow:0 0 10px #73c6e6!important;}
-.username--style16,.username--style51{text-shadow:0 0 10px #FF0000!important;}
-.username--style18{text-shadow:0 0 10px #FF4500!important;}
-.username--style38{text-shadow:0 0 10px #a000a0!important;}
-.username--style39,.username--style40,.username--style41,.username--style42,.username--style43,.username--style44{text-shadow:0 0 10px #00FFFF!important;}
-.username--style52,.username--style53{text-shadow:0 0 10px #0087ff!important;}
-.username--style96{text-shadow:0 0 10px #FD4806!important;}
+.p-body-sidebar,
+.p-body-sidebar .block-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.block--widget,
+.p-body-sidebar .block {
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r) !important;
+  margin: 0 0 12px !important;
+  padding: 8px !important;
+  width: 100% !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+.block-minorHeader,
+.p-body-sidebar .block-header {
+  background: var(--card2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--rs) !important;
+  margin: 0 0 8px !important;
+  padding: 12px 14px !important;
+}
